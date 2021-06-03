@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    { title: "Faire les courses", isDone: false },
-    { title: "Arroser les plantes", isDone: true },
-    { title: "Aller au musée", isDone: true },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [newTaskInput, setNewTaskInput] = useState("");
 
   return (
@@ -21,7 +17,7 @@ function App() {
               type="checkbox"
               onClick={() => {
                 const newTasks = [...tasks];
-                console.log(newTasks[index]);
+
                 if (newTasks[index].isDone === true) {
                   newTasks[index].isDone = false;
                 } else {
@@ -34,7 +30,15 @@ function App() {
             <span className={task.isDone === true ? "checked" : ""}>
               {task.title}
             </span>
-            <button>Supprimer</button>
+            <button
+              onClick={() => {
+                const newTasks = [...tasks];
+                newTasks.splice(index, 1);
+                setTasks(newTasks);
+              }}
+            >
+              Supprimer
+            </button>
           </div>
         );
       })}
