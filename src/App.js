@@ -34,19 +34,21 @@ function App() {
                 {task.title}
               </span>
               <button
+                className="trash-btn"
                 onClick={() => {
                   const newTasks = [...tasks];
                   newTasks.splice(index, 1);
                   setTasks(newTasks);
                 }}
               >
-                Supprimer
+                <i class="fas fa-trash-alt"></i>
               </button>
             </div>
           );
         })}
 
         <form
+          className="form"
           onSubmit={(event) => {
             event.preventDefault();
             const newTasks = [...tasks];
@@ -59,6 +61,7 @@ function App() {
           }}
         >
           <input
+            className="task-input"
             type="text"
             value={newTaskInput}
             onChange={(event) => {
@@ -66,7 +69,9 @@ function App() {
               setNewTaskInput(value);
             }}
           />
-          <button type="submit">Add task</button>
+          <button className="add-task" type="submit">
+            Add task
+          </button>
         </form>
       </div>
       <Footer />

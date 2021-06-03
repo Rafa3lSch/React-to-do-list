@@ -10,15 +10,19 @@ body {
 }
 
 .header {
-  font-weight: 100;
+  font-weight: normal;
   font-size: 30px;
   height: 10vh;
   border-bottom: 1px solid lightgray;
-  color: #5c47d3;
   display: flex;
   align-items: center;
   padding-left: 30px;
   background-color: white;
+}
+
+.header > i {
+  color: #5c47d3;
+  margin-right: 10px;
 }
 
 .container {
@@ -36,17 +40,46 @@ body {
   text-decoration: line-through;
 }
 
-.footer {
-  font-weight: 100;
-  font-size: 15px;
-  background-color: lightgrey;
+.trash-btn {
+  margin-left: 10px;
+  background-color: #5c47d3;
   color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form {
+  margin-top: 10px;
+}
+
+.task-input {
+  background-color: rgb(212, 235, 238);
+  border: solid 1px #5c47d3;
+  border-radius: 5px;
+  height: 20px;
+  width: 30vw;
+}
+
+.add-task {
+  background-color: #5c47d3;
+  color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.footer {
+  font-size: 15px;
+  background-color: white;
+  color: black;
   height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid lightgray;
 }
 
 a {
-  color: white;
+  color: black;
 }
