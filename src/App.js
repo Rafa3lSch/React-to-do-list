@@ -16,8 +16,24 @@ function App() {
       {tasks.map((task, index) => {
         return (
           <div>
-            <input checked={task.isDone} type="checkbox" />
-            <span>{task.title}</span>
+            <input
+              checked={task.isDone}
+              type="checkbox"
+              onClick={() => {
+                const newTasks = [...tasks];
+                console.log(newTasks[index]);
+                if (newTasks[index].isDone === true) {
+                  newTasks[index].isDone = false;
+                } else {
+                  newTasks[index].isDone = true;
+                }
+
+                setTasks(newTasks);
+              }}
+            />
+            <span className={task.isDone === true ? "checked" : ""}>
+              {task.title}
+            </span>
             <button>Supprimer</button>
           </div>
         );

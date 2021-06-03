@@ -1,1 +1,4 @@
 /* Other rules */
+.checked {
+  text-decoration: line-through;
+}
