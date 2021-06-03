@@ -2,21 +2,47 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    { title: "Faire les courses", isDone: false },
+    { title: "Arroser les plantes", isDone: true },
+    { title: "Aller au musée", isDone: true },
+  ]);
+  const [newTaskInput, setNewTaskInput] = useState("");
+
   return (
     <div>
       <h1>To do list</h1>
-      <div>
-        <input type="checkbox" />
-        <span>Rester concentré pendant le cours</span>
-        <button>Supprimer</button>
-      </div>
+
+      {tasks.map((task, index) => {
+        return (
+          <div>
+            <input checked={task.isDone} type="checkbox" />
+            <span>{task.title}</span>
+            <button>Supprimer</button>
+          </div>
+        );
+      })}
+
       <form
-        onSubmit={() => {
-          alert("submitted");
+        onSubmit={(event) => {
+          event.preventDefault();
+          const newTasks = [...tasks];
+          newTasks.push({
+            title: newTaskInput,
+            isDone: false,
+          });
+          setTasks(newTasks);
+          setNewTaskInput("");
         }}
       >
-        <input type="text" />
+        <input
+          type="text"
+          value={newTaskInput}
+          onChange={(event) => {
+            const value = event.target.value;
+            setNewTaskInput(value);
+          }}
+        />
         <button type="submit">Add task</button>
       </form>
     </div>
