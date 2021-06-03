@@ -1,4 +1,52 @@
 /* Other rules */
+* {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #5c47d3;
+}
+
+.header {
+  font-weight: 100;
+  font-size: 30px;
+  height: 10vh;
+  border-bottom: 1px solid lightgray;
+  color: #5c47d3;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  background-color: white;
+}
+
+.container {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: white;
+}
+
 .checked {
   text-decoration: line-through;
+}
+
+.footer {
+  font-weight: 100;
+  font-size: 15px;
+  background-color: lightgrey;
+  color: white;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: white;
 }
